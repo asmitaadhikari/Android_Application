@@ -1,8 +1,15 @@
 <resources>
-    <string name="app_name">DailyPlanner</string>
-    <string name="register">REGISTER</string>
-    <string name="login_email_hint">Email</string>
-    <string name="login_password_hint">Password</string>
-    <string name="signup_login_hint">Already have an account? Sign In</string>
-    <string name="login_signup_hint">Don\'t have an account? Sign Up</string>
+    <string name="app_name">Login</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+
+    <string name="swipe_left_for_register">Swipe Left for Register</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="e_mail">Email</string>
+    <string name="tag">Let\'s join us and </string>
+    <string name="swipe_right_for_login">Swipe Right for Login</string>
+    <string name="register">Register</string>
+    <string name="re_type_password">Re-type Password</string>
+    <string name="your_name">Full Name</string>
 </resources>

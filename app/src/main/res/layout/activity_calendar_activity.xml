@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".calendar_activity">
+    tools:context=".Activity.calendar_activity">
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

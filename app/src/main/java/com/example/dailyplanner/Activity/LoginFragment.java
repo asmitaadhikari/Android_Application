@@ -1,32 +1,21 @@
 
 package com.example.dailyplanner.Activity;
 
-import android.content.Context;
 import android.content.Intent;
-import android.net.DnsResolver;
-import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 
-import android.os.UserHandle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.dailyplanner.Activity.Interface.UserAPI;
-import com.example.dailyplanner.Activity.Model.User;
-import com.example.dailyplanner.Activity.URL.url;
+import com.example.dailyplanner.Interface.UserAPI;
+import com.example.dailyplanner.Model.User;
+import com.example.dailyplanner.URL.url;
 import com.example.dailyplanner.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
-import java.net.URI;
-import java.net.URL;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -91,8 +80,6 @@ public class LoginFragment extends AppCompatActivity {
 
                 }
             });
-
-
 
 
     }

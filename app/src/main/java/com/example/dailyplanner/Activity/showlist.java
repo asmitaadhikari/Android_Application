@@ -1,14 +1,16 @@
-package com.example.dailyplanner;
+package com.example.dailyplanner.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class calendar_activity extends AppCompatActivity {
+import com.example.dailyplanner.R;
+
+public class showlist extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_calendar_activity);
+        setContentView(R.layout.activity_showlist);
     }
 }

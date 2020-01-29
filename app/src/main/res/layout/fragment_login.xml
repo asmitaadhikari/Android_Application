@@ -62,7 +62,7 @@
                         android:background="@android:color/transparent"
                         android:drawableLeft="@drawable/mail_icon"
                         android:fontFamily="@font/raleway_light"
-                        android:hint="Email"
+                        android:hint="UserName"
                         android:inputType="textEmailAddress" />
                 </RelativeLayout>
 

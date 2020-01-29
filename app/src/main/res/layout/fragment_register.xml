@@ -207,7 +207,6 @@
     android:layout_height="wrap_content"
     android:clickable="true"
     android:focusable="true"
-    android:onClick="SignIn"
     android:src="@drawable/forward_icon"
     app:layout_anchor="@id/contentArea"
     app:layout_anchorGravity="bottom|center"/>

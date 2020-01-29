@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.dailyplanner.Activity.Interface.UserAPI;
@@ -35,6 +36,7 @@ import retrofit2.Response;
 public class LoginFragment extends AppCompatActivity {
 
     private EditText etusername, etpassword;
+    private TextView btnsignup;
 
     @Override
     protected void onCreate (Bundle savedInstanceState) {
@@ -49,6 +51,16 @@ public class LoginFragment extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 login();
+            }
+        });
+
+        btnsignup=findViewById(R.id.signup);
+
+        btnsignup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(LoginFragment.this,fragment_register.class);
+                startActivity(intent);
             }
         });
 
@@ -86,8 +98,9 @@ public class LoginFragment extends AppCompatActivity {
     }
     public void openDashboard()
     {
+
         Intent login=new Intent(LoginFragment.this,Dashboard.class);
-       startActivity(login);
+        startActivity(login);
     }
 }
 

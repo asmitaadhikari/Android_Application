@@ -31,19 +31,20 @@ import retrofit2.http.Url;
 
 public class fragment_register extends AppCompatActivity {
     private EditText etfname, etlname, etusername, etpassword;
-//    private FloatingActionButton btnsignup;
-FloatingActionButton fab = findViewById(R.id.btnsignup);
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_register);
-        getActionBar().setTitle("Registration");
+
 
         etfname = findViewById(R.id.et_name);
         etlname = findViewById(R.id.et_lname);
         etusername = findViewById(R.id.et_username);
         etpassword = findViewById(R.id.et_password);
+
+        FloatingActionButton fab = findViewById(R.id.btnsignup);
 
 
         fab.setOnClickListener(new View.OnClickListener() {

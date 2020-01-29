@@ -11,7 +11,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".showlist" />
-        <activity android:name=".preview_activity" />
         <activity android:name=".schedule" />
         <activity android:name=".calendar_activity" />
         <activity android:name=".Activity.Dashboard" />

@@ -8,9 +8,7 @@
     android:orientation="vertical"
     tools:context=".Activity.showlist">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -83,7 +81,7 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/txtTitle"
+                            android:id="@+id/title"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/raleway_bold"
@@ -145,7 +143,7 @@
 
 
 
-    </ScrollView>
+
 
 
 </LinearLayout>

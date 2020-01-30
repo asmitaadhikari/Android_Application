@@ -222,7 +222,7 @@
                                     android:layout_margin="5dp"
                                     android:background="@drawable/outline_background">
 
-                                    <android.support.v7.widget.AppCompatSpinner
+                                    <androidx.appcompat.widget.AppCompatSpinner
                                         android:id="@+id/spnCategory"
                                         android:layout_width="match_parent"
                                         android:layout_height="40dp"

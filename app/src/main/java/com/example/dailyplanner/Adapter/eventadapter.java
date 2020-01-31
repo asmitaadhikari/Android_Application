@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
+import android.os.StrictMode;
 import android.view.LayoutInflater;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -29,6 +30,7 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class eventadapter extends RecyclerView.Adapter<eventadapter.ViewHolder> {
+
     private Context context;
     private ArrayList<event> eventlist;
 
@@ -37,15 +39,22 @@ public class eventadapter extends RecyclerView.Adapter<eventadapter.ViewHolder> 
         this.eventlist = eventlist;
     }
 
+    @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_showevent, parent, false);
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.activity_showevent, parent, false);
         return new ViewHolder(view);
 
     }
 
+    public void strict(){
+        StrictMode.ThreadPolicy tp = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(tp);
+    }
+
     @Override
-    public void onBindViewHolder(ViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
         final event Event = eventlist.get(position);
 
         holder.txtTitle.setText(Event.getTitle());
@@ -122,63 +131,63 @@ public class eventadapter extends RecyclerView.Adapter<eventadapter.ViewHolder> 
             txtLocation = itemView.findViewById(R.id.txtLocation);
         }
     }
-
-    @SuppressLint("RestrictedAPI")
-    public void onMenuBtn(View view, final event Event, final int position)
-    {
-        MenuBuilder menuBuilder=new MenuBuilder(context);
-        MenuInflater inflater =new MenuInflater(context);
-        inflater.inflate(R.menu.list_menu,menuBuilder);
-        final MenuPopupHelper optionsMenu=new MenuPopupHelper(context,menuBuilder,view);
-        optionsMenu.setForceShowIcon(true);
-
-        menuBuilder.setCallback(new MenuBuilder.Callback() {
-            @Override
-            public boolean onMenuItemSelected(MenuBuilder menu, MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.opt_edit:
-                        Intent intent = new Intent(context, Alarm.class);
-
-                        intent.putExtra("id", Event.getId());
-                        intent.putExtra("title", Event.getTitle());
-                        intent.putExtra("description", Event.getDescription());
-                        String time[] = Event.getTime().split(" ");
-                        intent.putExtra("time", time[0]);
-                        intent.putExtra("am_pm", time[1]);
-                        intent.putExtra("location", Event.getLocation());
-
-                        context.startActivity(intent);
-
-                        break;
-                    case R.id.opt_delete:
-                        AlertDialog.Builder builder;
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                            builder = new AlertDialog.Builder(context, android.R.style.Theme_Material_Dialog_Alert)
-
-                        } else {
-                            builder = new AlertDialog.Builder(context);
-                        }
-                        builder.setTitle("Delete Entry")
-                                .setMessage("Are you sure you want to delete this event?")
-                                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialog, int which) {
-
-                                    }
-                                })
-
-                }
-            }
-
-
-            @Override
-            public void onMenuModeChange(MenuBuilder menu)
-            {
-
-            }
-        });
-        optionsMenu.show();
-    }
+//
+//    @SuppressLint("RestrictedAPI")
+//    public void onMenuBtn(View view, final event Event, final int position)
+//    {
+//        MenuBuilder menuBuilder=new MenuBuilder(context);
+//        MenuInflater inflater =new MenuInflater(context);
+//        inflater.inflate(R.menu.list_menu,menuBuilder);
+//        final MenuPopupHelper optionsMenu=new MenuPopupHelper(context,menuBuilder,view);
+//        optionsMenu.setForceShowIcon(true);
+//
+//        menuBuilder.setCallback(new MenuBuilder.Callback() {
+//            @Override
+//            public boolean onMenuItemSelected(MenuBuilder menu, MenuItem item) {
+//                switch (item.getItemId()) {
+//                    case R.id.opt_edit:
+//                        Intent intent = new Intent(context, Alarm.class);
+//
+//                        intent.putExtra("id", Event.getId());
+//                        intent.putExtra("title", Event.getTitle());
+//                        intent.putExtra("description", Event.getDescription());
+//                        String time[] = Event.getTime().split(" ");
+//                        intent.putExtra("time", time[0]);
+//                        intent.putExtra("am_pm", time[1]);
+//                        intent.putExtra("location", Event.getLocation());
+//
+//                        context.startActivity(intent);
+//
+//                        break;
+//                    case R.id.opt_delete:
+//                        AlertDialog.Builder builder;
+//                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+//                            builder = new AlertDialog.Builder(context, android.R.style.Theme_Material_Dialog_Alert)
+//
+//                        } else {
+//                            builder = new AlertDialog.Builder(context);
+//                        }
+//                        builder.setTitle("Delete Entry")
+//                                .setMessage("Are you sure you want to delete this event?")
+//                                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+//                                    @Override
+//                                    public void onClick(DialogInterface dialog, int which) {
+//
+//                                    }
+//                                })
+//
+//                }
+//            }
+//
+//
+//            @Override
+//            public void onMenuModeChange(MenuBuilder menu)
+//            {
+//
+//            }
+//        });
+//        optionsMenu.show();
+//    }
 
 
 }

@@ -2,7 +2,9 @@ package com.example.dailyplanner.Adapter;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
+import android.app.DatePickerDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
 import android.view.LayoutInflater;
@@ -46,22 +48,22 @@ public class eventadapter extends RecyclerView.Adapter<eventadapter.ViewHolder> 
     public void onBindViewHolder(ViewHolder holder, final int position) {
         final event Event = eventlist.get(position);
 
-        holder.txtTitle.setText(event.getTitle());
-        holder.txtDescription.setText(event.getDescription());
-        holder.txtTime.setText(event.getTime());
-        holder.txtLocation.setText(event.getLocation());
+        holder.txtTitle.setText(Event.getTitle());
+        holder.txtDescription.setText(Event.getDescription());
+        holder.txtTime.setText(Event.getTime());
+        holder.txtLocation.setText(Event.getLocation());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(context, Dashboard.class);
 
-                intent.putExtra("title", event.getTitle());
-                intent.putExtra("description", event.getDescription());
-                String time[] = event.getTime().split(" ");
+                intent.putExtra("title", Event.getTitle());
+                intent.putExtra("description", Event.getDescription());
+                String time[] = Event.getTime().split(" ");
                 intent.putExtra("time", time[0]);
                 intent.putExtra("am_pm", time[1]);
-                intent.putExtra("location", event.getLocation());
+                intent.putExtra("location", Event.getLocation());
 
                 context.startActivity(intent);
             }
@@ -127,49 +129,55 @@ public class eventadapter extends RecyclerView.Adapter<eventadapter.ViewHolder> 
         MenuBuilder menuBuilder=new MenuBuilder(context);
         MenuInflater inflater =new MenuInflater(context);
         inflater.inflate(R.menu.list_menu,menuBuilder);
-        MenuPopupHelper optionsMenu=new MenuPopupHelper(context,menuBuilder,view);
+        final MenuPopupHelper optionsMenu=new MenuPopupHelper(context,menuBuilder,view);
         optionsMenu.setForceShowIcon(true);
 
         menuBuilder.setCallback(new MenuBuilder.Callback() {
             @Override
             public boolean onMenuItemSelected(MenuBuilder menu, MenuItem item) {
-                switch (item.getItemId()){
+                switch (item.getItemId()) {
                     case R.id.opt_edit:
-                        Intent intent=new Intent(context, Alarm.class);
+                        Intent intent = new Intent(context, Alarm.class);
 
-                        intent.putExtra("id", event.getId());
-                        intent.putExtra("title",event.getTitle());
-                        intent.putExtra("description", event.getDescription());
-                        String time[] = event.getTime().split(" ");
+                        intent.putExtra("id", Event.getId());
+                        intent.putExtra("title", Event.getTitle());
+                        intent.putExtra("description", Event.getDescription());
+                        String time[] = Event.getTime().split(" ");
                         intent.putExtra("time", time[0]);
                         intent.putExtra("am_pm", time[1]);
-                        intent.putExtra("location", event.getLocation());
+                        intent.putExtra("location", Event.getLocation());
 
                         context.startActivity(intent);
 
                         break;
                     case R.id.opt_delete:
                         AlertDialog.Builder builder;
-                        if(Build.VERSION.SDK_INT > = Build.VERSION_CODES.LOLLIPOP )
-                        {
-                            builder=new AlertDialog.Builder(context,android.R.style.Theme_Material_Dialog_Alert)
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                            builder = new AlertDialog.Builder(context, android.R.style.Theme_Material_Dialog_Alert)
 
-                        }else
-                        {
-                            builder=new AlertDialog.Builder(context);
+                        } else {
+                            builder = new AlertDialog.Builder(context);
                         }
                         builder.setTitle("Delete Entry")
                                 .setMessage("Are you sure you want to delete this event?")
-                                .setPositiveButton(android.R.string.yes,Event)
+                                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+
+                                    }
+                                })
 
                 }
             }
 
+
             @Override
-            public void onMenuModeChange(MenuBuilder menu) {
+            public void onMenuModeChange(MenuBuilder menu)
+            {
 
             }
         });
+        optionsMenu.show();
     }
 
 

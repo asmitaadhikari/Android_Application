@@ -1,8 +1,10 @@
-package com.example.dailyplanner;
+package com.example.dailyplanner.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.dailyplanner.R;
 
 public class Add_Alarm extends AppCompatActivity {
 

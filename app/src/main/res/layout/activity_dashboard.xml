@@ -342,17 +342,6 @@
                             android:orientation="vertical">
 
                             <EditText
-                                android:id="@+id/edtTitle"
-                                android:layout_width="match_parent"
-                                android:layout_height="40dp"
-                                android:layout_margin="5dp"
-                                android:background="@drawable/outline_background"
-                                android:enabled="false"
-                                android:fontFamily="@font/raleway_light"
-                                android:hint="Enter title, people, time, place"
-                                android:padding="5dp" />
-
-                            <EditText
                                 android:id="@+id/edDescription"
                                 android:layout_width="match_parent"
                                 android:layout_height="40dp"
@@ -473,6 +462,17 @@
                 android:focusable="true"
 
                 android:src="@drawable/forward_icon" />
+
+            <EditText
+                android:id="@+id/edtTitle"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/outline_background"
+                android:enabled="false"
+                android:fontFamily="@font/raleway_light"
+                android:hint="Enter title, people, time, place"
+                android:padding="5dp" />
         </LinearLayout>
     </ScrollView>
 

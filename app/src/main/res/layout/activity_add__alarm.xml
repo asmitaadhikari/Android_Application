@@ -293,7 +293,6 @@
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
                         android:fontFamily="@font/raleway_light"
-                        android:onClick="onBtnClick"
                         android:padding="5dp"
                         android:text="S" />
                 </RelativeLayout>

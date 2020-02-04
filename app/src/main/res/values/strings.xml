@@ -14,13 +14,7 @@
     <string name="your_name">Full Name</string>
     <string name="title_activity_testing">testing</string>
     
-    <string-array name="listcategory">
-        <item>Onces</item>
-        <item>Daily</item>
-        <item>Weekly</item>
-        <item>Yearly</item>
 
-    </string-array>
 
     <string-array name="listNotification">
         <item>On Time</item>

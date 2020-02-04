@@ -21,4 +21,9 @@
         <item>Yearly</item>
 
     </string-array>
+
+    <string-array name="listNotification">
+        <item>On Time</item>
+        <item>30 Minutes Later</item>
+    </string-array>
 </resources>

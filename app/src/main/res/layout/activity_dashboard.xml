@@ -451,8 +451,10 @@
 
                             <androidx.appcompat.widget.AppCompatSpinner
                                 android:id="@+id/spnNotification"
-                                android:layout_width="match_parent"
-                                android:layout_height="40dp"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:entries="@array/listNotification"
+                                android:drawSelectorOnTop="true"
                                 android:layout_margin="5dp"
                                 android:fontFamily="@font/raleway_light"
                                 android:paddingLeft="5dp"

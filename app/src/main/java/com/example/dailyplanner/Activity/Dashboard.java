@@ -18,7 +18,7 @@ public class Dashboard extends AppCompatActivity {
     private TextView txtDate,txtTime,txtlocation,txtAM_PM;
     private EditText edTittle,edtDescription;
 
-    private Spinner spnCategory;
+    private Spinner spnCategory,spnNotification;
 
 
 
@@ -27,14 +27,11 @@ public class Dashboard extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_showevent);
-
         setContentView(R.layout.activity_dashboard);
 
         spnCategory=findViewById(R.id.spnCategory);
 
         List<String> categories=new ArrayList<>();
-        categories.add("Once");
         categories.add("Once");
         categories.add("Daily");
         categories.add("Weekly");

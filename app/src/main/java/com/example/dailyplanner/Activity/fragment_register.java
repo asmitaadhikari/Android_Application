@@ -22,8 +22,8 @@ import retrofit2.Response;
 
 
 public class fragment_register extends AppCompatActivity {
-   EditText etfname, etlname, etusername, etpassword;
-   TextView login;
+    EditText etfname, etlname, etusername, etpassword;
+    TextView login;
 
 
     @Override
@@ -65,7 +65,7 @@ public class fragment_register extends AppCompatActivity {
         String password=etpassword.getText().toString();
 
 
-  User user=new User(fname,lname,username,password);
+        User user=new User(fname,lname,username,password);
 
         UserAPI userapi = url.getInstance().create(UserAPI.class);
         Call<Void> Call=userapi.signup(user);
@@ -89,6 +89,6 @@ public class fragment_register extends AppCompatActivity {
                 Toast.makeText(fragment_register.this,"Error:"+t.getLocalizedMessage(),Toast.LENGTH_SHORT).show();
             }
         });
-   }
+    }
 
 }

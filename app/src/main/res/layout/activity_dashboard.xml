@@ -104,8 +104,10 @@
 
                             <Spinner
                                 android:id="@+id/spnCategory"
-                                android:layout_width="match_parent"
-                                android:layout_height="40dp"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:drawSelectorOnTop="true"
+                                android:entries="@array/listcategory"
                                 android:layout_margin="5dp"
                                 android:fontFamily="@font/raleway_light"
                                 android:paddingLeft="5dp"
@@ -347,7 +349,6 @@
                                 android:layout_height="40dp"
                                 android:layout_margin="5dp"
                                 android:background="@drawable/outline_background"
-                                android:enabled="false"
                                 android:fontFamily="@font/raleway_light"
                                 android:hint="Enter title, people, time, place"
                                 android:padding="5dp" />
@@ -358,7 +359,6 @@
                                 android:layout_height="40dp"
                                 android:layout_margin="5dp"
                                 android:background="@drawable/outline_background"
-                                android:enabled="false"
                                 android:fontFamily="@font/raleway_light"
                                 android:hint="Add note"
                                 android:padding="5dp" />

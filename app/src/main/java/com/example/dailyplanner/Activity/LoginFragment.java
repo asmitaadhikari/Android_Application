@@ -55,11 +55,16 @@ public class LoginFragment extends AppCompatActivity {
 
     }
         public void login()
-        {
-            User user=new User(etusername.getText().toString(),etpassword.getText().toString());
 
-            UserAPI userAPI= url.getInstance().create(UserAPI.class);
-            Call<Void> Call=userAPI.login(user);
+        {
+            String username=etusername.getText().toString();
+            String password=etpassword.getText().toString();
+
+            User user=new User(username,password);
+
+
+        UserAPI userAPI= url.getInstance().create(UserAPI.class);
+        Call<Void> Call=userAPI.login(user);
 
             Call.enqueue(new Callback<Void>() {
                 @Override

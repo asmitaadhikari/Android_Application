@@ -78,7 +78,7 @@ public class Alarm extends AppCompatActivity {
         txtAM_PM = findViewById(R.id.txtAM_PM);
 
         spnType = findViewById(R.id.spnCategory);
-        spnNotification = findViewById(R.id.spnNotification);
+
 
         List<String> typeList = new ArrayList<>();
         typeList.add("Once");

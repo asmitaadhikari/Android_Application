@@ -2,11 +2,13 @@
 package com.example.dailyplanner.Activity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -15,6 +17,7 @@ import com.example.dailyplanner.Interface.UserAPI;
 import com.example.dailyplanner.Model.User;
 import com.example.dailyplanner.URL.url;
 import com.example.dailyplanner.R;
+
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import retrofit2.Call;
@@ -26,6 +29,9 @@ public class LoginFragment extends AppCompatActivity {
 
     private EditText etusername, etpassword;
     private TextView btnsignup;
+    private CheckBox check;
+
+    SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate (Bundle savedInstanceState) {
@@ -34,6 +40,7 @@ public class LoginFragment extends AppCompatActivity {
 
         etusername = findViewById(R.id.et_username);
         etpassword = findViewById(R.id.et_password);
+        check=findViewById(R.id.chkrememberme);
         FloatingActionButton fab = findViewById(R.id.btnlogin);
 
         fab.setOnClickListener(new View.OnClickListener() {
@@ -72,10 +79,16 @@ public class LoginFragment extends AppCompatActivity {
                 {
                     if(!response.isSuccessful())
                     {
-                        Toast.makeText(LoginFragment.this,"Login Error",Toast.LENGTH_SHORT).show();
-                        return;
+                        Toast.makeText(LoginFragment.this,"Username or password doesnot match ",Toast.LENGTH_SHORT).show();
+
+                    }else {
+
+                        sharedPreferences = getSharedPreferences("User Details", MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putString("username", etusername.getText().toString());
+
+                        openDashboard();
                     }
-                    openDashboard();
                 }
 
                 @Override

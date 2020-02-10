@@ -101,7 +101,7 @@ public class Dashboard extends AppCompatActivity  implements View.OnClickListene
                     Toast.makeText(Dashboard.this,"Code:"+response.body(),Toast.LENGTH_SHORT).show();
                     return;
                 }
-                Toast.makeText(Dashboard.this, "Event is added successfully", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Dashboard.this, " Your Reminder is added", Toast.LENGTH_SHORT).show();
 
             }
 

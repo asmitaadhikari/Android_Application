@@ -58,14 +58,10 @@ public class eventadapter extends RecyclerView.Adapter<eventadapter.ViewHolder> 
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
         final event Event = eventlist.get(position);
 
-
         holder.txtDescription.setText(Event.getNotesSchema());
         holder.txtTime.setText(Event.getTime());
         holder.txtDate.setText(Event.getDate());
         holder.txtLocation.setText(Event.getLocation());
-
-
-
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,9 +82,6 @@ public class eventadapter extends RecyclerView.Adapter<eventadapter.ViewHolder> 
         });
     }
 
-
-
-
     @Override
     public int getItemCount() {
         return eventlist.size();
@@ -97,18 +90,13 @@ public class eventadapter extends RecyclerView.Adapter<eventadapter.ViewHolder> 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView  txtDescription, txtTime, txtDate, txtLocation;
 
-
-
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-
 
             txtDescription = itemView.findViewById(R.id.txtDescription);
             txtTime = itemView.findViewById(R.id.txtTime);
             txtDate = itemView.findViewById(R.id.txtDate);
             txtLocation = itemView.findViewById(R.id.txtLocation);
-
-
         }
     }
 }

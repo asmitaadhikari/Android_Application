@@ -99,12 +99,11 @@ public class LoginFragment extends AppCompatActivity {
                 }
             });
 
-
     }
     public void openDashboard()
     {
 
-        Intent login=new Intent(LoginFragment.this,Dashboard.class);
+        Intent login=new Intent(LoginFragment.this,HomeActivity.class);
         startActivity(login);
     }
 }

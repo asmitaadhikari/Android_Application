@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.dailyplanner"
-    android:theme="@style/AppTheme.NoActionBar" >
+    android:theme="@style/AppTheme.NoActionBar">
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -13,22 +13,30 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:usesCleartextTraffic="true" >
+        android:usesCleartextTraffic="true">
+        <activity android:name=".Activity.HomeActivity">
+
+        </activity>
         <activity android:name=".Activity.maps" />
         <activity android:name=".Activity.Add_Alarm" />
         <activity android:name=".Activity.Alarm" />
-        <activity android:name=".Activity.Showevent" />
+        <activity android:name=".Activity.Showevent" >
+
+        </activity>
         <activity android:name=".Activity.schedule" />
         <activity android:name=".Activity.calendar_activity" />
         <activity android:name=".Activity.Dashboard" />
-        <activity android:name=".Activity.Splash_activity" />
-        <activity android:name=".Activity.MainActivity" />
-        <activity android:name=".Activity.LoginFragment" >
+        <activity android:name=".Activity.Splash_activity" >
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".Activity.MainActivity" />
+        <activity android:name=".Activity.LoginFragment">
+
         </activity>
         <activity android:name=".Activity.fragment_register" />
     </application>

@@ -24,62 +24,47 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.dailyplanner.Activity.Alarm;
 import com.example.dailyplanner.Activity.Dashboard;
+import com.example.dailyplanner.Activity.Showevent;
 import com.example.dailyplanner.Model.event;
 import com.example.dailyplanner.R;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.List;
 
 public class eventadapter extends RecyclerView.Adapter<eventadapter.ViewHolder> {
 
-    private Context context;
-    private ArrayList<event> eventlist;
+     Context context;
+     List<event> eventlist;
 
-    public eventadapter(Context context, ArrayList<event> eventlist) {
+    public eventadapter(Context context, List<event> eventlist) {
         this.context = context;
         this.eventlist = eventlist;
     }
 
+
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.activity_showevent, parent, false);
-        return new ViewHolder(view);
+        View v = LayoutInflater.from(context).inflate
+                (R.layout.activity_showevent, parent, false);
+        return new ViewHolder(v);
 
     }
 
-    public void strict() {
-        StrictMode.ThreadPolicy tp = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-        StrictMode.setThreadPolicy(tp);
-    }
+
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
-        final event Event = eventlist.get(position);
+         event Event = eventlist.get(position);
 
         holder.txtDescription.setText(Event.getNotesSchema());
         holder.txtTime.setText(Event.getTime());
         holder.txtDate.setText(Event.getDate());
         holder.txtLocation.setText(Event.getLocation());
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(context, Dashboard.class);
 
-
-                intent.putExtra("description", Event.getNotesSchema());
-
-                intent.putExtra("location", Event.getLocation());
-
-                intent.putExtra("Date",Event.getDate());
-
-                intent.putExtra("time",Event.getTime());
-
-                context.startActivity(intent);
-            }
-        });
     }
 
     @Override

@@ -55,7 +55,7 @@
                     android:background="@drawable/field_back">
 
                     <EditText
-                        android:id="@+id/edtEmail"
+                        android:id="@+id/et_username"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_centerInParent="true"
@@ -74,7 +74,7 @@
                     android:background="@drawable/field_back">
 
                     <EditText
-                        android:id="@+id/edtPassword"
+                        android:id="@+id/et_password"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_centerInParent="true"
@@ -84,6 +84,14 @@
                         android:hint="Password"
                         android:inputType="textPassword" />
                 </RelativeLayout>
+
+                <CheckBox
+                    android:id="@+id/chkrememberme"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Remember me"
+                    />
+
 
                 <TextView
                     android:layout_width="wrap_content"

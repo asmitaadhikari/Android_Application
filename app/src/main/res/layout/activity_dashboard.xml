@@ -71,51 +71,6 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_margin="5dp"
-                        android:fontFamily="@font/raleway_bold"
-                        android:text="Type"
-                        android:textStyle="bold" />
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:layout_margin="10dp"
-                        android:orientation="horizontal">
-
-                        <RelativeLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="40dp"
-                            android:layout_margin="5dp"
-                            android:background="@drawable/outline_background">
-
-                            <Spinner
-                                android:id="@+id/spnCategory"
-                                android:layout_width="match_parent"
-                                android:layout_height="40dp"
-                                android:layout_margin="5dp"
-                                android:fontFamily="@font/raleway_light"
-                                android:paddingLeft="5dp"
-                                android:paddingRight="5dp" />
-                        </RelativeLayout>
-                    </LinearLayout>
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/weekLayout"
@@ -260,7 +215,47 @@
             </androidx.cardview.widget.CardView>
 
 
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:fontFamily="@font/raleway_bold"
+                        android:text="Date"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/edt_date"
+                            android:layout_width="150dp"
+                            android:layout_height="match_parent"
+                            />
+
+
+                        <Button
+                            android:id="@+id/btndate"
+                            android:layout_width="100dp"
+                            android:layout_height="match_parent"
+                            android:text="Date" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
@@ -273,42 +268,51 @@
                     android:orientation="vertical">
 
                     <TextView
+
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_margin="5dp"
                         android:fontFamily="@font/raleway_bold"
-                        android:text="Date"
+                        android:text="Time"
                         android:textStyle="bold" />
 
                     <LinearLayout
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:layout_margin="10dp"
                         android:orientation="horizontal">
 
-                        <RelativeLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="40dp"
-                            android:layout_margin="5dp"
-                            android:background="@drawable/outline_background">
+                        <EditText
+                            android:id="@+id/edt_time"
+                            android:layout_width="150dp"
+                            android:layout_height="match_parent"
+                            />
 
-                            <TextView
-                                android:id="@+id/date_or_days"
+<<<<<<< HEAD
+                            <EditText
+                                android:id="@+id/edDescription"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_centerInParent="true"
+                                android:layout_height="40dp"
                                 android:layout_margin="5dp"
+                                android:background="@drawable/outline_background"
+                                android:enabled="false"
                                 android:fontFamily="@font/raleway_light"
-                                android:paddingLeft="5dp"
-                                android:paddingRight="5dp"
-                                android:textAlignment="center" />
-                        </RelativeLayout>
+                                android:hint="Add note"
+                                android:padding="5dp" />
+                        </LinearLayout>
+=======
+
+                        <Button
+                            android:id="@+id/btntime"
+                            android:layout_width="100dp"
+                            android:layout_height="match_parent"
+                            android:text="Time"/>
+>>>>>>> Calendar_fix
                     </LinearLayout>
 
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
+
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
@@ -341,15 +345,15 @@
                             android:layout_margin="5dp"
                             android:orientation="vertical">
 
+
                             <EditText
                                 android:id="@+id/edDescription"
                                 android:layout_width="match_parent"
                                 android:layout_height="40dp"
                                 android:layout_margin="5dp"
                                 android:background="@drawable/outline_background"
-                                android:enabled="false"
                                 android:fontFamily="@font/raleway_light"
-                                android:hint="Add note"
+                                android:hint="Add Description"
                                 android:padding="5dp" />
                         </LinearLayout>
                     </LinearLayout>
@@ -390,12 +394,13 @@
                             android:background="@drawable/outline_background"
                             android:orientation="vertical">
 
-                            <TextView
+                            <EditText
                                 android:id="@+id/edtLocation"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
                                 android:layout_margin="5dp"
+                                android:clickable="true"
                                 android:fontFamily="@font/raleway_light"
                                 android:hint="Add location"
                                 android:padding="5dp" />
@@ -407,53 +412,56 @@
 
             </androidx.cardview.widget.CardView>
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp">
+<!--            <androidx.cardview.widget.CardView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margin="5dp">-->
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:orientation="vertical">-->
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_margin="5dp"
-                        android:fontFamily="@font/raleway_bold"
-                        android:text="Notification"
-                        android:textStyle="bold" />
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:layout_margin="5dp"-->
+<!--                        android:fontFamily="@font/raleway_bold"-->
+<!--                        android:text="Notification"-->
+<!--                        android:textStyle="bold" />-->
 
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:layout_margin="10dp"
-                        android:orientation="horizontal">
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:layout_margin="10dp"-->
+<!--                        android:orientation="horizontal">-->
 
-                        <RelativeLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="40dp"
-                            android:layout_margin="5dp"
-                            android:background="@drawable/outline_background">
+<!--                        <RelativeLayout-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="40dp"-->
+<!--                            android:layout_margin="5dp"-->
+<!--                            android:background="@drawable/outline_background">-->
 
-                            <androidx.appcompat.widget.AppCompatSpinner
-                                android:id="@+id/spnNotification"
-                                android:layout_width="match_parent"
-                                android:layout_height="40dp"
-                                android:layout_margin="5dp"
-                                android:fontFamily="@font/raleway_light"
-                                android:paddingLeft="5dp"
-                                android:paddingRight="5dp" />
-                        </RelativeLayout>
-                    </LinearLayout>
+<!--                            <androidx.appcompat.widget.AppCompatSpinner-->
+<!--                                android:id="@+id/spnNotification"-->
+<!--                                android:layout_width="fill_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:entries="@array/listNotification"-->
+<!--                                android:drawSelectorOnTop="true"-->
+<!--                                android:layout_margin="5dp"-->
+<!--                                android:fontFamily="@font/raleway_light"-->
+<!--                                android:paddingLeft="5dp"-->
+<!--                                android:paddingRight="5dp" />-->
+<!--                        </RelativeLayout>-->
+<!--                    </LinearLayout>-->
 
-                </LinearLayout>
+<!--                </LinearLayout>-->
 
-            </androidx.cardview.widget.CardView>
+<!--            </androidx.cardview.widget.CardView>-->
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/btnsaveevent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
